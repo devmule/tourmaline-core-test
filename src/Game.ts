@@ -8,13 +8,21 @@ export class Game {
 
     constructor() {
 
+        let prevFrame: Frame | null = null;
         for (let i = 0; i < FRAMES_COUNT; i++) {
-            this.frames.push(new Frame());
+            let frame = new Frame();
+            this.frames.push(frame);
+            prevFrame?.setNextFrame(frame);
+            prevFrame = frame;
         }
 
     }
 
     play() {
+        for (let i = 0; i < this.frames.length; i++) {
+            let frame = this.frames[i];
+            //frame.
+        }
     }
 
     get totalScore(): number {

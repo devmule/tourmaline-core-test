@@ -11,6 +11,33 @@ describe('Frame test', () => {
 
     });
 
+    it('get strike value', () => {
+
+        let frame = new Frame();
+        frame.bowlResults = [10]; // strike
+
+        let nextFrame = new Frame();
+        nextFrame.bowlResults = [8, 1];
+        frame.setNextFrame(nextFrame);
+
+        expect(frame.value).to.be.equal(19);
+
+    });
+
+    it('get spare value', () => {
+
+        let frame = new Frame();
+        frame.bowlResults = [6, 4]; // 10, spare
+        expect(frame.isSpare).to.be.true;
+
+        let nextFrame = new Frame();
+        nextFrame.bowlResults = [4, 3]; // + 4
+        frame.setNextFrame(nextFrame);
+
+        expect(frame.value).to.be.equal(14);
+
+    });
+
     it('check for strike', () => {
 
         let frame = new Frame();

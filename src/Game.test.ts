@@ -6,7 +6,7 @@ describe('Game test', () => {
     it('get total score', () => {
 
         let game = new Game();
-        expect(game.totalScore).to.be.equal(17);
+        expect(game.totalScore).to.be.equal(0);
 
     });
 
