@@ -6,6 +6,7 @@ on: # rebuild any PRs and main branch changes
       - main
 
 jobs:
+
   build: # make sure build/ci work properly
     runs-on: ubuntu-latest
     steps:
@@ -14,7 +15,8 @@ jobs:
           npm install
       - run: |
           npm run build
-  test: # make sure the action works on a clean machine without building
+
+  test: # make sure all tests passed
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
