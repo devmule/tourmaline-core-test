@@ -56,7 +56,7 @@ export class Frame {
         return this.bowlResults.length >= 2 && (this.bowlResults[0] + this.bowlResults[1]) == MAX_PINS;
     }
 
-    updatePins() {
+    resetPins() {
         this.pinsCount = MAX_PINS;
     }
 

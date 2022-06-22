@@ -21,8 +21,38 @@ export class Game {
     play() {
         for (let i = 0; i < this.frames.length; i++) {
             let frame = this.frames[i];
-            //frame.
+            this.playFrame(frame);
         }
+    }
+
+    playFrame(frame: Frame) {
+
+        // there are tho bowls per frame
+
+        // 1st bowling
+        frame.doABowl();
+
+        if (frame.isStrike) {
+            let frameIsLast = frame.getNextFrame() == null;
+            if (frameIsLast) {
+                frame.resetPins();
+                frame.doABowl();
+                frame.doABowl();
+            }
+            return;
+        }
+
+        // 2nd bowling
+        frame.doABowl();
+        if (frame.isSpare) {
+            let frameIsLast = frame.getNextFrame() == null;
+            if (frameIsLast) {
+                frame.resetPins();
+                frame.doABowl();
+            }
+            return;
+        }
+
     }
 
     get totalScore(): number {
