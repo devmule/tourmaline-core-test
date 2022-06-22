@@ -4,8 +4,8 @@ const MAX_PINS = 10;
 
 export class Frame {
 
-    private pinsCount = MAX_PINS;
-    private bowlResults: number[] = [];
+    pinsCount = MAX_PINS;
+    bowlResults: number[] = [];
 
     get value(): number {
         return this.bowlResults.reduce((sum, result) => sum + result, 0);
