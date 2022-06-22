@@ -1,20 +1,26 @@
 import {doABowl} from "./utils";
 
+const MAX_PINS = 10;
+
 export class Frame {
 
-    private pinsCount = 10;
+    private pinsCount = MAX_PINS;
     private bowlResults: number[] = [];
 
     get value(): number {
-        return 0;
+        return this.bowlResults.reduce((sum, result) => sum + result, 0);
     }
 
     get isStrike(): boolean {
-        return this.bowlResults.length >= 1 && this.bowlResults[0] == 10;
+        return this.bowlResults.length >= 1 && this.bowlResults[0] == MAX_PINS;
     }
 
     get isSpare(): boolean {
-        return this.bowlResults.length >= 2 && (this.bowlResults[0] + this.bowlResults[1]) == 10
+        return this.bowlResults.length >= 2 && (this.bowlResults[0] + this.bowlResults[1]) == MAX_PINS;
+    }
+
+    updatePins() {
+        this.pinsCount = MAX_PINS;
     }
 
     doABowl() {
