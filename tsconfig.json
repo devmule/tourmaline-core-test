@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
     "target": "ES6",
-    "module": "ESNext",
+    "module": "CommonJS",
     "strict": true,
     "stripInternal": true,
     "experimentalDecorators": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "moduleResolution": "node",
-    "types": [],
+    "types": ["jest", "node"],
     "lib": ["ES6", "DOM"],
     "outDir": "./dist/"
   },

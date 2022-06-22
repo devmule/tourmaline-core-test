@@ -4,17 +4,19 @@
   "keywords": [],
   "author": "devmule",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha -r ts-node/register src/**/*.test.ts",
     "dev": "webpack --mode=development",
-    "build": "webpack --mode=production",
-    "serve": "webpack serve"
+    "build": "webpack --mode=production"
   },
   "devDependencies": {
+    "@types/chai": "^4.3.1",
+    "@types/mocha": "^9.1.1",
+    "chai": "^4.3.6",
+    "mocha": "^10.0.0",
     "ts-loader": "^7.0.5",
     "ts-node": "^10.8.1",
+    "typescript": "^4.7.3",
     "webpack": "^5.59.1",
-    "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.3.1",
-    "typescript": "^4.7.3"
+    "webpack-cli": "^4.9.1"
   }
 }
