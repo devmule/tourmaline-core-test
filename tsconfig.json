@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "ESNext",
+    "strict": true,
+    "stripInternal": true,
+    "experimentalDecorators": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "moduleResolution": "node",
+    "types": [],
+    "lib": ["ES6", "DOM"],
+    "outDir": "./dist/"
+  },
+  "include": ["./src/**/*"]
+}
